@@ -1,0 +1,12 @@
+<div class="product__item">
+                <div class="product__item__pic"
+                    style="background-image: url('');">
+                </div>
+                <div class="product__item__text">
+                    <ul>
+                        <li>Temporadas</li>
+                        <li>2018</li>
+                    </ul>
+                    <h5><a href="#">F1 2018 - GP da Austrália</a></h5>
+                </div>
+            </div>

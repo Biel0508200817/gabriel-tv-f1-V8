@@ -1,0 +1,233 @@
+/*
+        ========================================
+        CSS EMBUTIDO - ESTILO FÓRMULA 1
+        ========================================
+        */
+
+:root {
+    --f1-dark-background: #121212;
+    --f1-mid-gray: #1E1E1E;
+    --f1-highlight-red: #E10600;
+    /* Vermelho vibrante da F1 */
+    --f1-text-light: #F5F5F5;
+    --f1-text-dim: #AAAAAA;
+    --f1-border-color: #333333;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--f1-dark-background);
+    color: var(--f1-text-light);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--f1-highlight-red);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--f1-text-light);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* --- Header --- */
+.header {
+    background-color: var(--f1-mid-gray);
+    border-bottom: 3px solid var(--f1-highlight-red);
+    padding: 20px 0;
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo a {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--f1-highlight-red);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.header__nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header__nav ul li {
+    margin-left: 30px;
+}
+
+.header__nav ul li a {
+    color: var(--f1-text-light);
+    font-weight: 700;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s;
+}
+
+.header__nav ul li a:hover,
+.header__nav ul li.active a {
+    color: var(--f1-highlight-red);
+    border-bottom: 2px solid var(--f1-highlight-red);
+}
+
+/* --- Breadcrumb --- */
+.breadcrumb-option {
+    background-color: var(--f1-dark-background);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--f1-border-color);
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.breadcrumb__links a {
+    color: var(--f1-text-dim);
+    margin-right: 10px;
+}
+
+.breadcrumb__links a:hover {
+    color: var(--f1-highlight-red);
+}
+
+.breadcrumb__links a:not(:last-child)::after {
+    content: ' /';
+    margin-left: 10px;
+}
+
+/* --- Main Content (Anime Section) --- */
+.anime-details.spad {
+    padding: 40px 0;
+}
+
+.anime__video__player {
+    background-color: #000;
+    border: 1px solid var(--f1-border-color);
+    margin-bottom: 40px;
+    box-shadow: 0 0 15px rgba(225, 6, 0, 0.5);
+    /* Sutil brilho de destaque */
+}
+
+.anime__video__player iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    /* Para garantir proporção responsiva */
+    display: block;
+}
+
+.section-title {
+    border-left: 5px solid var(--f1-highlight-red);
+    padding-left: 15px;
+    margin-bottom: 30px;
+}
+
+.section-title h5 {
+    color: var(--f1-text-light);
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.anime__details__episodes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 10px;
+    background-color: var(--f1-mid-gray);
+    border-radius: 8px;
+}
+
+.anime__details__episodes a {
+    display: block;
+    background-color: var(--f1-dark-background);
+    color: var(--f1-text-light);
+    padding: 12px;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 700;
+    border: 1px solid var(--f1-border-color);
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.anime__details__episodes a:hover,
+.anime__details__episodes a[href*="gpbahrain2022.html"] {
+    background-color: var(--f1-highlight-red);
+    border-color: var(--f1-highlight-red);
+    color: var(--f1-text-light);
+    transform: scale(1.05);
+    /* Efeito de destaque ao passar o mouse ou item ativo */
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--f1-mid-gray);
+    padding: 30px 0;
+    border-top: 3px solid var(--f1-highlight-red);
+    text-align: center;
+}
+
+.footer__logo a {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--f1-text-dim);
+    text-transform: uppercase;
+}
+
+.page-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+}
+
+#scrollToTopButton {
+    background-color: var(--f1-highlight-red);
+    color: var(--f1-text-light);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 1;
+}
+
+/* --- Media Queries para responsividade --- */
+@media (max-width: 768px) {
+    .header__content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header__logo {
+        margin-bottom: 15px;
+    }
+
+    .header__nav ul {
+        flex-direction: column;
+    }
+
+    .header__nav ul li {
+        margin: 5px 0;
+    }
+
+    .anime__details__episodes {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+}
